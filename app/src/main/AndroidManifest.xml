@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.alexeyre.foodie">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cookie_icon"
+        android:label="Foodie"
+        android:roundIcon="@drawable/cookie_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar"
+        tools:replace="android:icon">
+        <activity android:name=".DrinkActivity" />
+        <activity android:name=".DessertActivity" />
+        <activity android:name=".EnglishActivity" />
+        <activity android:name=".MexicanActivity" />
+        <activity android:name=".AmericanActivity" />
+        <activity android:name=".ItalianActivity" />
+        <activity android:name=".IndianActivity" />
+        <activity
+            android:name=".ChineseActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".SplashScreen"
+            android:label="Foodie">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
