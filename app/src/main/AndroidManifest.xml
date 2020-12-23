@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         tools:replace="android:icon">
+        <activity android:name=".ChineseRecipe1Activity"></activity>
         <activity android:name=".DrinkActivity" />
         <activity android:name=".DessertActivity" />
         <activity android:name=".EnglishActivity" />
