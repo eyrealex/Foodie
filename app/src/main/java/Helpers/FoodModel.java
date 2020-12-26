@@ -1,18 +1,17 @@
 package Helpers;
 
-public class RecipeModel {
-    private String recipeName, recipeDesc, recipeTime;
-    private int recipeImage;
+public class FoodModel {
+    private String recipeName, recipeDesc, recipeTime, recipeImage;
 
 
-    public RecipeModel(String recipeName, String recipeDesc, String recipeTime, int recipeImage) {
+    public FoodModel(String recipeName, String recipeDesc, String recipeTime, String recipeImage) {
         this.recipeName = recipeName;
         this.recipeDesc = recipeDesc;
         this.recipeTime = recipeTime;
         this.recipeImage = recipeImage;
     }
 
-    public RecipeModel() {
+    public FoodModel() {
     }
 
     public String getRecipeName() {
@@ -27,7 +26,7 @@ public class RecipeModel {
         return recipeTime;
     }
 
-    public int getRecipeImage() {
+    public String getRecipeImage() {
         return recipeImage;
     }
 }

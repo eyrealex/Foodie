@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
 
-
         //hooks
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -169,23 +168,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_home:
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_recipes:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                startActivity(new Intent(HomeActivity.this, MyRecipeActivity.class));
                 break;
             case R.id.nav_favourite:
                 //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                break;
-            case R.id.nav_login:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                break;
-            case R.id.nav_profile:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                break;
-            case R.id.nav_signout:
                 break;
             case R.id.nav_settings:
                 //startActivity(new Intent(MainActivity.this, MapsActivity.class));
@@ -194,7 +185,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 //startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
             case R.id.nav_share:
-               // startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                // startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
         }
         return true;

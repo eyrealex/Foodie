@@ -3,15 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.alexeyre.foodie">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/cookie_icon"
         android:label="Foodie"
         android:roundIcon="@drawable/cookie_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar"
+        android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".ChineseRecipe1Activity"></activity>
+        <activity android:name=".MyRecipeActivity"></activity>
+        <activity android:name=".CreateRecipeActivity" />
+        <activity android:name=".ChineseRecipe1Activity" />
         <activity android:name=".DrinkActivity" />
         <activity android:name=".DessertActivity" />
         <activity android:name=".EnglishActivity" />
