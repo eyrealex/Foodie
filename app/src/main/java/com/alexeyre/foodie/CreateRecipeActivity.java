@@ -1,20 +1,16 @@
 package com.alexeyre.foodie;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,9 +23,6 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.DateFormat;
 import java.util.Calendar;
-
-import Helpers.FoodModel;
-import Helpers.RecipeModel;
 
 public class CreateRecipeActivity extends AppCompatActivity {
 
@@ -47,8 +40,6 @@ public class CreateRecipeActivity extends AppCompatActivity {
         rName = (EditText) findViewById(R.id.recipeName);
         rDesc = (EditText) findViewById(R.id.recipeDesc);
         rTime = (EditText) findViewById(R.id.recipeTime);
-
-
 
 
     }

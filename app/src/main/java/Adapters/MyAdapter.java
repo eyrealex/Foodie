@@ -17,7 +17,7 @@ import com.alexeyre.foodie.R;
 
 import java.util.List;
 
-import Helpers.RecipeModel;
+import com.alexeyre.foodie.RecipeModel;
 
 public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 

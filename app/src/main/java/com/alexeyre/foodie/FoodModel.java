@@ -1,4 +1,4 @@
-package Helpers;
+package com.alexeyre.foodie;
 
 public class FoodModel {
     private String recipeName, recipeDesc, recipeTime, recipeImage;

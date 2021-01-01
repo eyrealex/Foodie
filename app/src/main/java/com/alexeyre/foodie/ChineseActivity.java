@@ -7,14 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.MyAdapter;
-import Helpers.RecipeModel;
 
 public class ChineseActivity extends AppCompatActivity {
 
