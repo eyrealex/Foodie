@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alexeyre.foodie.ChineseRecipe1Activity;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
     private Context mContext;
     private List<RecipeModel> myRecipeList;
+    private int lastPosition = -1;
 
     public MyAdapter(Context mContext, List<RecipeModel> myRecipeList) {
         this.mContext = mContext;
@@ -35,20 +38,41 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, int i) {
-        recipeViewHolder.imageView.setImageResource(myRecipeList.get(i).getRecipeImage());
+
+        Glide.with(mContext)
+                .load(myRecipeList.get(i).getRecipeImage())
+                .into(recipeViewHolder.imageView);
+
         recipeViewHolder.mTitle.setText(myRecipeList.get(i).getRecipeName());
         recipeViewHolder.mDesc.setText(myRecipeList.get(i).getRecipeDesc());
         recipeViewHolder.mTime.setText(myRecipeList.get(i).getRecipeTime());
 
-        recipeViewHolder.mCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, ChineseRecipe1Activity.class);
-                intent.putExtra("Image", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeImage());
-                intent.putExtra("Description", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeDesc());
-                mContext.startActivity(intent);
-            }
+        recipeViewHolder.mCardView.setOnClickListener(v -> {
+
+            Intent intent = new Intent(mContext, RecipeDetail.class);
+            intent.putExtra("Image", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeImage());
+            intent.putExtra("Description", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeDesc());
+            intent.putExtra("RecipeName", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeName());
+            intent.putExtra("price", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeTime());
+            intent.putExtra("keyValue", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getKey());
+            mContext.startActivity(intent);
         });
+
+        setAnimation(recipeViewHolder.itemView, i);
+    }
+
+    private void setAnimation(View viewToAnimate, int position) {
+        if (position > lastPosition) {
+
+            ScaleAnimation animation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f,
+                    Animation.RELATIVE_TO_SELF, 0.5f,
+                    Animation.RELATIVE_TO_SELF, 0.5f);
+            animation.setDuration(1500);
+            viewToAnimate.startAnimation(animation);
+            lastPosition = position;
+
+
+        }
     }
 
     @Override

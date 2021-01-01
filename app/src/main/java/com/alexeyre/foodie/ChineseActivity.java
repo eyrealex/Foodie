@@ -15,9 +15,7 @@ import java.util.List;
 public class ChineseActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    RecyclerView mRecyclerView;
-    List<RecipeModel> myRecipeList;
-    RecipeModel mRecipeModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +31,7 @@ public class ChineseActivity extends AppCompatActivity {
             }
         });
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(ChineseActivity.this, 1);
-        mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        myRecipeList = new ArrayList<>();
-
-        mRecipeModel = new RecipeModel("Kung Pao Noodles", "Spicy kung pao noodles are a cinch to whip up in just 20 minutes with the best sweet and spicy kung pao sauce. Easily add chicken, shrimp, or beef to amp this side up to a full meal.", "20 mins", R.drawable.noodles);
-        myRecipeList.add(mRecipeModel);
-        mRecipeModel = new RecipeModel("Boiled Dumplings", "Chinese dumplings (jiaozi) are a rather popular dish during the Chinese New Year season but are also a fun and delicious appetizer, dinner food, and snack to enjoy any time of year.", "45 mins", R.drawable.dumplings);
-        myRecipeList.add(mRecipeModel);
-
-        MyAdapter myAdapter = new MyAdapter(ChineseActivity.this, myRecipeList);
-        mRecyclerView.setAdapter(myAdapter);
     }
 
     @Override

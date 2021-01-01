@@ -1,11 +1,10 @@
 package com.alexeyre.foodie;
 
 public class RecipeModel {
-    private String recipeName, recipeDesc, recipeTime;
-    private int recipeImage;
+    private String recipeName, recipeDesc, recipeTime, recipeImage, key;
 
 
-    public RecipeModel(String recipeName, String recipeDesc, String recipeTime, int recipeImage) {
+    public RecipeModel(String recipeName, String recipeDesc, String recipeTime, String recipeImage) {
         this.recipeName = recipeName;
         this.recipeDesc = recipeDesc;
         this.recipeTime = recipeTime;
@@ -27,7 +26,13 @@ public class RecipeModel {
         return recipeTime;
     }
 
-    public int getRecipeImage() {
-        return recipeImage;
+    public String getRecipeImage() { return recipeImage; }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
