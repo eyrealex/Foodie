@@ -12,8 +12,6 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.MyAdapter;
-
 public class ChineseActivity extends AppCompatActivity {
 
     Toolbar toolbar;

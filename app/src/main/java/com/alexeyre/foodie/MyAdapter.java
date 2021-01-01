@@ -1,4 +1,4 @@
-package Adapters;
+package com.alexeyre.foodie;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,11 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alexeyre.foodie.ChineseRecipe1Activity;
-import com.alexeyre.foodie.R;
 
 import java.util.List;
-
-import com.alexeyre.foodie.RecipeModel;
 
 public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
