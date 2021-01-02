@@ -37,15 +37,17 @@
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
                 android:text="Title"
-                android:textSize="19sp" />
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/detail_title"
-                android:layout_margin="18dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginRight="20dp"
                 android:text="@string/recipeTitle"
                 android:textSize="17sp" />
 
@@ -57,15 +59,17 @@
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
                 android:text="Ingredients"
-                android:textSize="19sp" />
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/ingredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/detail_ingredients"
-                android:layout_margin="18dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginRight="20dp"
                 android:text="@string/recipeIngredients"
                 android:textSize="17sp" />
 
@@ -77,15 +81,17 @@
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
                 android:text="Method"
-                android:textSize="19sp" />
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/method"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/detail_method"
-                android:layout_margin="18dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginRight="20dp"
                 android:text="@string/recipeMethod"
                 android:textSize="17sp" />
         </RelativeLayout>

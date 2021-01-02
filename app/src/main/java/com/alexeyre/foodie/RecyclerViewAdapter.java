@@ -37,7 +37,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull final MyHolder myHolder, final int i) {
 
         myHolder.mTitle.setText(mCloneList.get(i).getTitle());
-        myHolder.mDesc.setText(mCloneList.get(i).getDesc());
         myHolder.mTime.setText(mCloneList.get(i).getTime());
         myHolder.imageView.setImageResource(mCloneList.get(i).getImage());
         myHolder.mCardView.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +71,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             imageView = itemView.findViewById(R.id.recipeIv);
             mTitle = itemView.findViewById(R.id.titleTv);
-            mDesc = itemView.findViewById(R.id.descTv);
             mTime = itemView.findViewById(R.id.timeTv);
             mCardView = itemView.findViewById(R.id.cardviewCv);
         }

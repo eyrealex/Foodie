@@ -67,4 +67,10 @@ public class MyRecipeActivity extends AppCompatActivity {
     public void btnAddRecipe(View view) {
         startActivity(new Intent(MyRecipeActivity.this, CreateRecipeActivity.class));
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(MyRecipeActivity.this, HomeActivity.class));
+        finish();
+    }
 }

@@ -46,7 +46,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
                 .into(recipeViewHolder.imageView);
 
         recipeViewHolder.mTitle.setText(myRecipeList.get(i).getRecipeName());
-        recipeViewHolder.mDesc.setText(myRecipeList.get(i).getRecipeDesc());
         recipeViewHolder.mTime.setText(myRecipeList.get(i).getRecipeTime());
 
         recipeViewHolder.mCardView.setOnClickListener(v -> {
@@ -94,7 +93,6 @@ class RecipeViewHolder extends RecyclerView.ViewHolder {
 
         imageView = itemView.findViewById(R.id.recipeIv);
         mTitle = itemView.findViewById(R.id.titleTv);
-        mDesc = itemView.findViewById(R.id.descTv);
         mTime = itemView.findViewById(R.id.timeTv);
         mCardView = itemView.findViewById(R.id.cardviewCv);
     }
