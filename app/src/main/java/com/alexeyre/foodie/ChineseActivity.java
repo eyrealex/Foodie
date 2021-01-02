@@ -15,6 +15,9 @@ import java.util.List;
 public class ChineseActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    RecyclerView mRecyclerView;
+    List<RecipeModelClone> myRecipeList;
+    RecyclerViewAdapter recyclerViewAdapter;
 
 
     @Override
@@ -31,7 +34,20 @@ public class ChineseActivity extends AppCompatActivity {
             }
         });
 
+        myRecipeList = new ArrayList<>();
+        myRecipeList.add(new RecipeModelClone("Kung Pao Noodles", "200 gm chopped into cubes chicken" +
+                "1 medium chopped tomato" +
+                "1/2 pinch red chilli powder" +
+                "2 tablespoon vegetable oil" +
+                "1/2 cut into strips cucumber" +
+                "1/2 tablespoon chopped coriander leaves" +
+                "1 large thinly sliced onion", "Method", "test", "test\n", R.drawable.noodles));
 
+
+        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+        mRecyclerView.setAdapter(recyclerViewAdapter);
     }
 
     @Override
