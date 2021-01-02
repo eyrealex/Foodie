@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".RecipeUpdateActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".RecipeUpdateActivity" />
         <activity android:name=".RecipeDetail" />
         <activity android:name=".MyRecipeActivity" />
         <activity android:name=".CreateRecipeActivity" />

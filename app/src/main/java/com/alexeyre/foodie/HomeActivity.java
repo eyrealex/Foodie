@@ -182,7 +182,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 //startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
             case R.id.nav_about:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                startActivity(new Intent(HomeActivity.this, AboutActivity.class));
                 break;
             case R.id.nav_share:
                 // startActivity(new Intent(MainActivity.this, MapsActivity.class));

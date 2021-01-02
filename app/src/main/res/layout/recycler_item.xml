@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/grey_200"
-    android:orientation="vertical"
-    tools:context=".ChineseActivity">
+    android:orientation="vertical">
 
 
 
@@ -27,7 +26,7 @@
 
             <ImageView
                 android:id="@+id/recipeIv"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:scaleType="centerCrop"
