@@ -53,7 +53,7 @@ public class IndianActivity extends AppCompatActivity {
                 "250ml coconut milk", "Method", "1. Mix the garlic, ginger, turmeric and lamb together in a large mixing bowl, then leave the lamb to marinate in the fridge for 1 hr or preferably overnight." + "\n" +
                 "2. Toast the spice mix ingredients in a dry frying pan for 12 mins over a low heat, stirring occasionally, until they release their aroma. Leave to cool, then grind to a fine powder using a spice grinder or pestle and mortar. Set aside." + "\n" +
                 "3. Heat the oil over a medium heat in a heavy-based, large saucepan. Add the curry leaves and onions, and fry for 15-17 mins, stirring well. As the onions begin to change colour, add the lamb and fry for 10 mins. Add the spice powder and turn the heat up slightly. Stir continuously for 5 mins. Pour in the stock and season to taste. Bring to the boil, then turn down to a simmer. Put the lid on and cook for 40 mins. Stir halfway through cooking." + "\n" +
-                "4. Tip in the potato and continue cooking for 15 mins. Add the coconut milk along with the tamarind paste and simmer for 10 mins with the lid off to reduce. Serve warm with rice or roti. " + "\n",  "2 hours, 20 mins", R.drawable.lamb_curry));
+                "4. Tip in the potato and continue cooking for 15 mins. Add the coconut milk along with the tamarind paste and simmer for 10 mins with the lid off to reduce. Serve warm with rice or roti. " + "\n", "2 hours, 20 mins", R.drawable.lamb_curry));
 
         myRecipeList.add(new RecipeModelClone("Butter chicken curry", "6 tablespoons butter, divided, " +
                 "2 lbs boneless/skinless chicken thighs, cut into 1” chunks, " +
@@ -74,8 +74,7 @@ public class IndianActivity extends AppCompatActivity {
                 "5. Serve garnished with lime and cilantro, alongside rice and naan." + "\n", " 30 mins", R.drawable.butter_chicken));
 
 
-
-        mRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setAdapter(recyclerViewAdapter);

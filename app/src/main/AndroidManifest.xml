@@ -13,13 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity"/>
         <activity android:name=".AboutActivity" />
         <activity android:name=".RecipeUpdateActivity" />
         <activity android:name=".RecipeDetail" />
         <activity android:name=".MyRecipeActivity" />
         <activity android:name=".CreateRecipeActivity" />
-        <activity android:name=".ChineseRecipe1Activity" />
         <activity android:name=".DrinkActivity" />
         <activity android:name=".DessertActivity" />
         <activity android:name=".EnglishActivity" />

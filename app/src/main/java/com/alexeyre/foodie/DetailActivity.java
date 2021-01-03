@@ -21,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
         recipeIngredients = (TextView) findViewById(R.id.ingredients);
         recipeMethodTitle = (TextView) findViewById(R.id.detail_method);
         recipe = (TextView) findViewById(R.id.method);
-        recipeImage = (ImageView)findViewById(R.id.detail_image);
+        recipeImage = (ImageView) findViewById(R.id.detail_image);
 
 
         Intent intent = getIntent();

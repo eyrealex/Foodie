@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 intent.putExtra("RecipeTitle", mCloneList.get(i).getTitle());
                 intent.putExtra("RecipeIngredients", mCloneList.get(i).getIngredients());
-                intent.putExtra("RecipeMethodTitle",mCloneList.get(i).getMethodTitle());
+                intent.putExtra("RecipeMethodTitle", mCloneList.get(i).getMethodTitle());
                 intent.putExtra("Recipe", mCloneList.get(i).getRecipe());
                 intent.putExtra("Image", mCloneList.get(i).getImage());
 

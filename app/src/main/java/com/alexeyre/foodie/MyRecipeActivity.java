@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,15 +32,15 @@ public class MyRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_recipe);
 
-        mRecyclerView = (RecyclerView)findViewById(R.id.myRecyclerView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(MyRecipeActivity.this,1);
+        mRecyclerView = (RecyclerView) findViewById(R.id.myRecyclerView);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(MyRecipeActivity.this, 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        text_search = (EditText)findViewById(R.id.search_text);
+        text_search = (EditText) findViewById(R.id.search_text);
 
 
         myRecipeList = new ArrayList<>();
-        myAdapter  = new MyAdapter(MyRecipeActivity.this,myRecipeList);
+        myAdapter = new MyAdapter(MyRecipeActivity.this, myRecipeList);
         mRecyclerView.setAdapter(myAdapter);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
@@ -49,7 +50,7 @@ public class MyRecipeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 myRecipeList.clear();
 
-                for(DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()) {
                     RecipeModel recipeModel = itemSnapshot.getValue(RecipeModel.class);
                     recipeModel.setKey(itemSnapshot.getKey());
                     myRecipeList.add(recipeModel);

@@ -26,7 +26,9 @@ public class RecipeModel {
         return recipeTime;
     }
 
-    public String getRecipeImage() { return recipeImage; }
+    public String getRecipeImage() {
+        return recipeImage;
+    }
 
     public String getKey() {
         return key;
