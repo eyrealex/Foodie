@@ -27,13 +27,7 @@ public class DrinkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_drink);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DrinkActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
+
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Sex on the beach cocktail", "ice , " +

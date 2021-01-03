@@ -26,13 +26,7 @@ public class EnglishActivity extends AppCompatActivity {
         setContentView(R.layout.activity_english);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(EnglishActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
+
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Roast Beef", "1 tbsp black peppercorn , " +

@@ -17,7 +17,7 @@ import android.view.View;
 import com.google.android.material.navigation.NavigationView;
 
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     //variables
     DrawerLayout drawerLayout;
@@ -47,114 +47,50 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        //get all buttons for different activities
+        findViewById(R.id.layoutChinese).setOnClickListener(this);
+        findViewById(R.id.layoutIndian).setOnClickListener(this);
+        findViewById(R.id.layoutItalian).setOnClickListener(this);
+        findViewById(R.id.layoutAmerican).setOnClickListener(this);
+        findViewById(R.id.layoutMexican).setOnClickListener(this);
+        findViewById(R.id.layoutEnglish).setOnClickListener(this);
+        findViewById(R.id.layoutDessert).setOnClickListener(this);
+        findViewById(R.id.layoutDrink).setOnClickListener(this);
 
-        //create chinese button activity
-        findViewById(R.id.layoutChinese).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openChineseActivity();
-            }
-        });
+    }//end on create method
 
-        //create indian button activity
-        findViewById(R.id.layoutIndian).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openIndianActivity();
-            }
-        });
+    @Override
+    public void onClick(View v) {
 
-        //create italian button activity
-        findViewById(R.id.layoutItalian).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openItalianActivity();
-            }
-        });
+        switch (v.getId()) {
+            case R.id.layoutChinese:
+                startActivity(new Intent(HomeActivity.this, ChineseActivity.class));
+                break;
+            case R.id.layoutIndian:
+                startActivity(new Intent(HomeActivity.this, IndianActivity.class));
+                break;
+            case R.id.layoutItalian:
+                startActivity(new Intent(HomeActivity.this, ItalianActivity.class));
+                break;
+            case R.id.layoutAmerican:
+                startActivity(new Intent(HomeActivity.this, AmericanActivity.class));
+                break;
+            case R.id.layoutMexican:
+                startActivity(new Intent(HomeActivity.this, MexicanActivity.class));
+                break;
+            case R.id.layoutEnglish:
+                startActivity(new Intent(HomeActivity.this, EnglishActivity.class));
+                break;
+            case R.id.layoutDessert:
+                startActivity(new Intent(HomeActivity.this, DessertActivity.class));
+                break;
+            case R.id.layoutDrink:
+                startActivity(new Intent(HomeActivity.this, DrinkActivity.class));
+                break;
 
-        //create american button activity
-        findViewById(R.id.layoutAmerican).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openAmericanActivity();
-            }
-        });
+        }//end switch
 
-        //create mexican button activity
-        findViewById(R.id.layoutMexican).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openMexicanActivity();
-            }
-        });
-
-        //create english button activity
-        findViewById(R.id.layoutEnglish).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openEnglishActivity();
-            }
-        });
-
-        //create dessert button activity
-        findViewById(R.id.layoutDessert).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openDessertActivity();
-            }
-        });
-
-        //create drink button activity
-        findViewById(R.id.layoutDrink).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HomeActivity.this.openDrinkActivity();
-            }
-        });
-
-    }
-
-    public void openChineseActivity() {
-        Intent intent = new Intent(this, ChineseActivity.class);
-        startActivity(intent);
-    }
-
-    private void openIndianActivity() {
-        Intent intent = new Intent(this, IndianActivity.class);
-        startActivity(intent);
-    }
-
-    private void openItalianActivity() {
-        Intent intent = new Intent(this, ItalianActivity.class);
-        startActivity(intent);
-    }
-
-    private void openAmericanActivity() {
-        Intent intent = new Intent(this, AmericanActivity.class);
-        startActivity(intent);
-    }
-
-    private void openMexicanActivity() {
-        Intent intent = new Intent(this, MexicanActivity.class);
-        startActivity(intent);
-    }
-
-    private void openEnglishActivity() {
-        Intent intent = new Intent(this, EnglishActivity.class);
-        startActivity(intent);
-    }
-
-
-    private void openDessertActivity() {
-        Intent intent = new Intent(this, DessertActivity.class);
-        startActivity(intent);
-    }
-
-    private void openDrinkActivity() {
-        Intent intent = new Intent(this, DrinkActivity.class);
-        startActivity(intent);
-    }
-
+    }//end onclick method
 
     @Override
     public void onBackPressed() {
@@ -175,19 +111,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_recipes:
                 startActivity(new Intent(HomeActivity.this, MyRecipeActivity.class));
                 break;
-            case R.id.nav_favourite:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                break;
-            case R.id.nav_settings:
-                //startActivity(new Intent(MainActivity.this, MapsActivity.class));
-                break;
             case R.id.nav_about:
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
-                break;
-            case R.id.nav_share:
-                // startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
         }
         return true;
     }
-}
+
+
+}//end home activity

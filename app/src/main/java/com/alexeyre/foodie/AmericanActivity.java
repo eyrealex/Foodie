@@ -26,13 +26,6 @@ public class AmericanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_american);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AmericanActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Sloppy Joes", "1 tbsp vegetable oil , " +

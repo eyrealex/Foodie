@@ -26,13 +26,7 @@ public class ItalianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_italian);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ItalianActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
+
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Spagetti Bolognese", "2 cloves of garlic , " +

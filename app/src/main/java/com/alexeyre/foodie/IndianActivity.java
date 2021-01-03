@@ -26,13 +26,7 @@ public class IndianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_indian);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(IndianActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
+
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Railway lamb curry", "8 garlic cloves crushed, " +

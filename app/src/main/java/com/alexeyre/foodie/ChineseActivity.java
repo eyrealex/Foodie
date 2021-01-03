@@ -26,13 +26,6 @@ public class ChineseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chinese);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChineseActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Kung Pao Noodles", "12 ounces spaghetti, fettuccine, or linguine noodles, " +

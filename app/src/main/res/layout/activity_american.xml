@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_back_btn" />
+        layout="@layout/toolbar_american" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

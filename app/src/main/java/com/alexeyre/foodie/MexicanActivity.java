@@ -26,13 +26,7 @@ public class MexicanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mexican);
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MexicanActivity.this, HomeActivity.class));
-                finish();
-            }
-        });
+
 
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Chicken and bean enchiladas", "1 tbsp rapeseed oil , " +

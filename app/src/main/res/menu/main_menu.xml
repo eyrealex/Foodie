@@ -14,11 +14,6 @@
             android:icon="@drawable/ic_cookbook"
             android:title="My Recipes" />
 
-        <item
-            android:id="@+id/nav_favourite"
-            android:background="@color/white"
-            android:icon="@drawable/ic_favourite"
-            android:title="Favourites" />
 
     </group>
 
@@ -28,17 +23,9 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_settings"
-                    android:icon="@drawable/ic_settings"
-                    android:title="Settings" />
-                <item
                     android:id="@+id/nav_about"
                     android:icon="@drawable/ic_about"
                     android:title="About" />
-                <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_share"
-                    android:title="Share" />
             </group>
         </menu>
 
