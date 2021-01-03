@@ -129,6 +129,11 @@ public class RecipeUpdateActivity extends AppCompatActivity {
             }
         });
 
-
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(RecipeUpdateActivity.this, RecipeDetail.class));
+        finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }

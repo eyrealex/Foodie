@@ -78,6 +78,7 @@ public class ItalianActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(ItalianActivity.this, HomeActivity.class));
         finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
 

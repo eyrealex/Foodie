@@ -55,6 +55,7 @@ public class DrinkActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(DrinkActivity.this, HomeActivity.class));
         finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
 

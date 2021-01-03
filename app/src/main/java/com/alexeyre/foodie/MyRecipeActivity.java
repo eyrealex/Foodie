@@ -64,11 +64,13 @@ public class MyRecipeActivity extends AppCompatActivity {
 
     public void btnAddRecipe(View view) {
         startActivity(new Intent(MyRecipeActivity.this, CreateRecipeActivity.class));
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(MyRecipeActivity.this, HomeActivity.class));
         finish();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }

@@ -65,27 +65,35 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (v.getId()) {
             case R.id.layoutChinese:
                 startActivity(new Intent(HomeActivity.this, ChineseActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutIndian:
                 startActivity(new Intent(HomeActivity.this, IndianActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutItalian:
                 startActivity(new Intent(HomeActivity.this, ItalianActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutAmerican:
                 startActivity(new Intent(HomeActivity.this, AmericanActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutMexican:
                 startActivity(new Intent(HomeActivity.this, MexicanActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutEnglish:
                 startActivity(new Intent(HomeActivity.this, EnglishActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutDessert:
                 startActivity(new Intent(HomeActivity.this, DessertActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.layoutDrink:
                 startActivity(new Intent(HomeActivity.this, DrinkActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
 
         }//end switch
@@ -110,9 +118,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_recipes:
                 startActivity(new Intent(HomeActivity.this, MyRecipeActivity.class));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.nav_about:
                 startActivity(new Intent(HomeActivity.this, AboutActivity.class));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 break;
         }
         return true;

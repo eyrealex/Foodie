@@ -47,18 +47,17 @@ public class RecipeDetail extends AppCompatActivity {
                     .into(RecipeImage);
 
 
-
         }
     }
 
     public void btnUpdateRecipe(View view) {
         startActivity(new Intent(getApplicationContext(), RecipeUpdateActivity.class)
+
                 .putExtra("Recipe Name", RecipeName.getText().toString())
                 .putExtra("Ingredients", RecipeIngredients.getText().toString())
                 .putExtra("Method", RecipeMethod.getText().toString())
-                .putExtra("oldimageUrl", imageUrl)
-                .putExtra("key", key)
-        );
+                .putExtra("oldimageUrl", imageUrl));
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
 
     }
