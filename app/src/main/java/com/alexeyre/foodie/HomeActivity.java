@@ -9,12 +9,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
 
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Locale;
 
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -29,6 +34,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //french
+        setAppLocale("fr");
 
 
         //hooks
@@ -58,6 +66,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         findViewById(R.id.layoutDrink).setOnClickListener(this);
 
     }//end on create method
+
+    private void setAppLocale(String localCode){
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(new Locale(localCode.toLowerCase()));
+    }
 
     @Override
     public void onClick(View v) {

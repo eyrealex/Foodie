@@ -15,4 +15,14 @@
     <string name="recipeTitle">Title</string>
     <string name="recipeIngredients">Ingredients</string>
     <string name="recipeMethod">Method</string>
+
+    <string name="recipeCuisinesTitle">Cuisines</string>
+    <string name="recipeChineseTitle">Chinese</string>
+    <string name="recipeIndianTitle">Indian</string>
+    <string name="recipeItalianTitle">Italian</string>
+    <string name="recipeAmericanTitle">American</string>
+    <string name="recipeMexicanTitle">Mexican</string>
+    <string name="recipeEnglishTitle">English</string>
+    <string name="recipeDessertTitle">Dessert</string>
+    <string name="recipeDrinkTitle">Drink</string>
 </resources>

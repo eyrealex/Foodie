@@ -60,7 +60,7 @@ public class RecipeUpdateActivity extends AppCompatActivity {
             key = bundle.getString("key");
             oldImageUrl = bundle.getString("oldimageUrl");
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference("Recipe").child(key);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Recipe").child("key");
     }
 
     public void btnSelectImage(View view) {
@@ -132,8 +132,7 @@ public class RecipeUpdateActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(RecipeUpdateActivity.this, RecipeDetail.class));
-        finish();
+        super.onBackPressed();
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
