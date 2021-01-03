@@ -28,6 +28,7 @@ public class AmericanActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
 
         myRecipeList = new ArrayList<>();
+
         myRecipeList.add(new RecipeModelClone("Sloppy Joes", "1 tbsp vegetable oil , " +
                 "2 small red peppers or yellow peppers, finely chopped , " +
                 "2 garlic cloves crushed , " +
@@ -38,7 +39,7 @@ public class AmericanActivity extends AppCompatActivity {
                 "6 burger buns , " +
                 "crispy onions to serve , " +
                 "iceberg lettuce to serve", "Method", "1. Heat the oil in a deep frying pan, then fry the onion, pepper and garlic for 8-10 mins until softened. Add the mince, breaking it up with a wooden spoon as you go, and stir until it browns all over. Tip in the tomatoes and chipotle, or barbecue sauce, and add a little seasoning. Simmer for 10-15 mins until the sauce has thickened. " + "\n" +
-                "2. Put the cheese slices on top of the mince and cover with a lid for 2 mins to let it melt into the sauce. Pile into the buns with the crispy onions, and lettuce on the side for scooping up the extra sauce." + "\n", "30 mins", R.drawable.sloppy_joes));
+                "2. Put the cheese slices on top of the mince and cover with a lid for 2 mins to let it melt into the sauce. Pile into the buns with the crispy onions, and lettuce on the side for scooping up the extra sauce." + "\n", "30 mins", R.drawable.sloppy_joes, R.raw.video));
 
         myRecipeList.add(new RecipeModelClone("BBQ Pulled Pork Sandwich", "2 and 1/2kg boneless pork shoulder skin removed , " +
                 "3 tbsp olive oil , " +
@@ -53,13 +54,15 @@ public class AmericanActivity extends AppCompatActivity {
                 "3. Add 1 cup of water to the roasting tin, cover very tightly with foil and cook for 5 hrs or until almost falling apart." + "\n" +
                 "4. Drain the juices from the meat into a measuring jug. Shred the pork using 2 forks, discarding the fat." + "\n" +
                 "5. Skim off the fat from the juices. Mix 125ml of the juices with 4 tbsp BBQ sauce (see recipe in 'goes well with') and pour over the meat. Keep warm until serving, or reheat." + "\n" +
-                "6. To assemble, pile the meat into the halved brioche buns, spoon over the BBQ sauce, top with coleslaw and pickles, and sandwich together." + "\n", "5 hours 10 mins", R.drawable.pulled_pork));
+                "6. To assemble, pile the meat into the halved brioche buns, spoon over the BBQ sauce, top with coleslaw and pickles, and sandwich together." + "\n", "5 hours 10 mins", R.drawable.pulled_pork, R.raw.video));
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         mRecyclerView.setAdapter(recyclerViewAdapter);
+
+
     }
 
     @Override

@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,8 @@ public class ChineseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
 
+
+
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Kung Pao Noodles", "12 ounces spaghetti, fettuccine, or linguine noodles, " +
                 "1/2 cup soy sauce, " +
@@ -40,7 +45,7 @@ public class ChineseActivity extends AppCompatActivity {
                 "2 green onion, thinly sliced", "Method", "1. Cook noodles according to package's instructions. Drain and set aside." + "\n" +
                 "2. In a large skillet whisk together soy sauce, sesame oil, rice vinegar, sugar, and chili paste and bring to a boil." + "\n" +
                 "3. In a small bowl whisk together cold water and corn starch. Stir into skillet and bring back to a boil, then reduce to medium low heat." + "\n" +
-                "4. Stir noodles, peanuts, and green onions into the sauce. Serve immediately." + "\n", " 20 mins", R.drawable.noodles));
+                "4. Stir noodles, peanuts, and green onions into the sauce. Serve immediately." + "\n", " 20 mins", R.drawable.noodles, R.raw.video));
 
         myRecipeList.add(new RecipeModelClone("Sticky Chinese Lemon Chicken", "1-2 pounds chicken tenderloin, " +
                 "2 eggs, " +
@@ -53,7 +58,7 @@ public class ChineseActivity extends AppCompatActivity {
                 "4. Use a slotted spoon to transfer chicken to a paper-towel lined plate. Discard any excess oil in the pan and use a paper towel to wipe it out." + "\n" +
                 "5. Add broth, soy sauce, lemon juice, garlic, sugar, honey, and salt to pan and whisk to combine. Bring to a boil over medium-high heat." + "\n" +
                 "6. In a small bowl whisk together broth (or water) and corn starch until dissolved. Add to boiling sauce, then reduce heat to medium-low and stir until thickened." + "\n" +
-                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken));
+                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken, R.raw.video));
         myRecipeList.add(new RecipeModelClone("Sticky Chinese Lemon Chicken", "1-2 pounds chicken tenderloin, " +
                 "2 eggs, " +
                 "2 tablespoons soy sauce, " +
@@ -65,7 +70,7 @@ public class ChineseActivity extends AppCompatActivity {
                 "4. Use a slotted spoon to transfer chicken to a paper-towel lined plate. Discard any excess oil in the pan and use a paper towel to wipe it out." + "\n" +
                 "5. Add broth, soy sauce, lemon juice, garlic, sugar, honey, and salt to pan and whisk to combine. Bring to a boil over medium-high heat." + "\n" +
                 "6. In a small bowl whisk together broth (or water) and corn starch until dissolved. Add to boiling sauce, then reduce heat to medium-low and stir until thickened." + "\n" +
-                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken));
+                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken, R.raw.video));
         myRecipeList.add(new RecipeModelClone("Sticky Chinese Lemon Chicken", "1-2 pounds chicken tenderloin, " +
                 "2 eggs, " +
                 "2 tablespoons soy sauce, " +
@@ -77,7 +82,7 @@ public class ChineseActivity extends AppCompatActivity {
                 "4. Use a slotted spoon to transfer chicken to a paper-towel lined plate. Discard any excess oil in the pan and use a paper towel to wipe it out." + "\n" +
                 "5. Add broth, soy sauce, lemon juice, garlic, sugar, honey, and salt to pan and whisk to combine. Bring to a boil over medium-high heat." + "\n" +
                 "6. In a small bowl whisk together broth (or water) and corn starch until dissolved. Add to boiling sauce, then reduce heat to medium-low and stir until thickened." + "\n" +
-                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken));
+                "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken, R.raw.video));
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);

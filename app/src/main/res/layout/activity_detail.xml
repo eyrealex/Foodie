@@ -95,7 +95,31 @@
                 android:text="@string/recipeMethod"
                 android:textSize="17sp" />
 
+            <TextView
+                android:id="@+id/detail_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/method"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:text="Video"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_video"
+                android:padding="20dp">
+
+                <VideoView
+                    android:id="@+id/video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </FrameLayout>
+
         </RelativeLayout>
+
     </LinearLayout>
 
 </ScrollView>
