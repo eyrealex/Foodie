@@ -26,9 +26,9 @@ import com.google.firebase.storage.UploadTask;
 
 public class RecipeUpdateActivity extends AppCompatActivity {
 
-    String RecipeName, RecipeDesc, RecipeTime;
+    String RecipeName, RecipeIngredients, RecipeMethod, RecipeTime;
     ImageView RecipeImage;
-    EditText name_text, desc_text, time_text;
+    EditText name_text, ingredients_text, method_text, time_text;
     String imageUrl;
     String key, oldImageUrl;
     DatabaseReference databaseReference;
@@ -43,8 +43,9 @@ public class RecipeUpdateActivity extends AppCompatActivity {
 
         RecipeImage = (ImageView) findViewById(R.id.recipeImage);
         name_text = (EditText) findViewById(R.id.recipeName);
-        desc_text = (EditText) findViewById(R.id.recipeDesc);
-        time_text = (EditText) findViewById(R.id.recipeTime);
+        ingredients_text = (EditText) findViewById(R.id.recipe_ingredients);
+        method_text = (EditText) findViewById(R.id.recipe_method);
+        time_text = (EditText) findViewById(R.id.recipe_time);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -53,8 +54,9 @@ public class RecipeUpdateActivity extends AppCompatActivity {
                     .load(bundle.getString("oldimageUrl"))
                     .into(RecipeImage);
             name_text.setText(bundle.getString("recipeNameKey"));
-            desc_text.setText(bundle.getString("descriptionKey"));
-            time_text.setText(bundle.getString("priceKey"));
+            ingredients_text.setText(bundle.getString("ingredientsKey"));
+            method_text.setText(bundle.getString("methodKey"));
+            time_text.setText(bundle.getString("timeKey"));
             key = bundle.getString("key");
             oldImageUrl = bundle.getString("oldimageUrl");
         }
@@ -82,7 +84,8 @@ public class RecipeUpdateActivity extends AppCompatActivity {
     public void btnUpdateRecipe(View view) {
 
         RecipeName = name_text.getText().toString().trim();
-        RecipeDesc = desc_text.getText().toString().trim();
+        RecipeIngredients = ingredients_text.getText().toString().trim();
+        RecipeMethod = method_text.getText().toString();
         RecipeTime = time_text.getText().toString();
 
 
@@ -108,15 +111,16 @@ public class RecipeUpdateActivity extends AppCompatActivity {
     }
 
     private void uploadRecipe() {
-        FoodModel foodData = new FoodModel(
+        RecipeModel recipeModel = new RecipeModel(
                 RecipeName,
-                RecipeDesc,
+                RecipeIngredients,
+                RecipeMethod,
                 RecipeTime,
                 imageUrl
         );
 
 
-        databaseReference.setValue(foodData).addOnCompleteListener(new OnCompleteListener<Void>() {
+        databaseReference.setValue(recipeModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 StorageReference storageReferenceNew = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageUrl);

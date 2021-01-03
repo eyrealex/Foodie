@@ -1,13 +1,12 @@
 package com.alexeyre.foodie;
 
 public class RecipeModelClone {
-    private String title, desc, ingredients, methodTitle, recipe, time;
+    private String title, ingredients, methodTitle, recipe, time;
     private int image;
 
 
     public RecipeModelClone(String title, String ingredients, String methodTitle, String recipe, String time, int image) {
         this.title = title;
-        this.desc = desc;
         this.ingredients = ingredients;
         this.methodTitle = methodTitle;
         this.recipe = recipe;
@@ -22,9 +21,6 @@ public class RecipeModelClone {
         return title;
     }
 
-    public String getDesc() {
-        return desc;
-    }
 
     public String getIngredients() {
         return ingredients;

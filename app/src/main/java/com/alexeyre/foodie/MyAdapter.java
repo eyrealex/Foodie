@@ -52,9 +52,10 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
             Intent intent = new Intent(mContext, RecipeDetail.class);
             intent.putExtra("Image", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeImage());
-            intent.putExtra("Description", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeDesc());
             intent.putExtra("RecipeName", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeName());
-            intent.putExtra("price", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeTime());
+            intent.putExtra("RecipeIngredients", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeIngredients());
+            intent.putExtra("RecipeMethod", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeMethod());
+            intent.putExtra("RecipeTime", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeTime());
             intent.putExtra("keyValue", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getKey());
             mContext.startActivity(intent);
         });
@@ -85,7 +86,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 class RecipeViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imageView;
-    TextView mTitle, mDesc, mTime;
+    TextView mTitle, mTime;
     CardView mCardView;
 
     public RecipeViewHolder(@NonNull View itemView) {

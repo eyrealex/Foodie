@@ -94,6 +94,7 @@
                 android:layout_marginRight="20dp"
                 android:text="@string/recipeMethod"
                 android:textSize="17sp" />
+
         </RelativeLayout>
     </LinearLayout>
 

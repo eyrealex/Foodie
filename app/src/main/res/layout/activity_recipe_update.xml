@@ -41,20 +41,29 @@
                 android:textSize="19sp" />
 
             <EditText
-                android:id="@+id/recipeDesc"
+                android:id="@+id/recipe_ingredients"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Description"
+                android:hint="Ingredients(space ingredients)"
                 android:textSize="19sp" />
 
             <EditText
-                android:id="@+id/recipeTime"
+                android:id="@+id/recipe_method"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Time to cook"
+                android:hint="Steps taken(new line for each step)"
+                android:textSize="19sp" />
+
+            <EditText
+                android:id="@+id/recipe_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Time to Cook"
                 android:textSize="19sp" />
 
             <Button

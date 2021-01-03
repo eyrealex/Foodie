@@ -28,7 +28,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
 
     ImageView rImage;
     Uri uri;
-    EditText rName, rDesc, rTime;
+    EditText rName, rIngredients, rMethod, rTime;
     String imageUrl;
 
     @Override
@@ -38,7 +38,8 @@ public class CreateRecipeActivity extends AppCompatActivity {
 
         rImage = (ImageView) findViewById(R.id.recipeImage);
         rName = (EditText) findViewById(R.id.recipeName);
-        rDesc = (EditText) findViewById(R.id.recipeDesc);
+        rIngredients = (EditText) findViewById(R.id.recipeIngredients);
+        rMethod = (EditText) findViewById(R.id.recipeMethod);
         rTime = (EditText) findViewById(R.id.recipeTime);
 
 
@@ -94,9 +95,10 @@ public class CreateRecipeActivity extends AppCompatActivity {
     public void uploadRecipe() {
 
 
-        FoodModel foodModel = new FoodModel(
+        RecipeModel recipeModel = new RecipeModel(
                 rName.getText().toString(),
-                rDesc.getText().toString(),
+                rIngredients.getText().toString(),
+                rMethod.getText().toString(),
                 rTime.getText().toString(),
                 imageUrl
         );
@@ -105,7 +107,7 @@ public class CreateRecipeActivity extends AppCompatActivity {
                 .format(Calendar.getInstance().getTime());
 
         FirebaseDatabase.getInstance().getReference("Recipe")
-                .child(myCurrentDateTime).setValue(foodModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                .child(myCurrentDateTime).setValue(recipeModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 

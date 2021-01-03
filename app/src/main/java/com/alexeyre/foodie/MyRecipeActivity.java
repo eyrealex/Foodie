@@ -36,9 +36,6 @@ public class MyRecipeActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MyRecipeActivity.this, 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
-        text_search = (EditText) findViewById(R.id.search_text);
-
-
         myRecipeList = new ArrayList<>();
         myAdapter = new MyAdapter(MyRecipeActivity.this, myRecipeList);
         mRecyclerView.setAdapter(myAdapter);

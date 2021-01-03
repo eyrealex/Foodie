@@ -68,7 +68,7 @@ public class MexicanActivity extends AppCompatActivity {
                 "4. Heat a griddle pan until smoking hot and add the chicken and marinade to the pan." + "\n" +
                 "5. Keep everything moving over a high heat for about 5 mins using tongs until you get a nice charred effect. If your griddle pan is small you may need to do this in two batches." + "\n" +
                 "6. To check the chicken is cooked, find the thickest part and tear in half – if any part is still raw cook until done." + "\n" +
-                "7. Put the tortillas in the oven to heat up and serve with the cooked chicken, a bag of mixed salad and one 230g tub of fresh salsa." + "\n", "10mins", R.drawable.fajitas));
+                "7. Put the tortillas in the oven to heat up and serve with the cooked chicken, a bag of mixed salad and one 230g tub of fresh salsa." + "\n", "10 mins", R.drawable.fajitas));
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);

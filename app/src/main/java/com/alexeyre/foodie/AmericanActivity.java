@@ -60,7 +60,7 @@ public class AmericanActivity extends AppCompatActivity {
                 "3. Add 1 cup of water to the roasting tin, cover very tightly with foil and cook for 5 hrs or until almost falling apart." + "\n" +
                 "4. Drain the juices from the meat into a measuring jug. Shred the pork using 2 forks, discarding the fat." + "\n" +
                 "5. Skim off the fat from the juices. Mix 125ml of the juices with 4 tbsp BBQ sauce (see recipe in 'goes well with') and pour over the meat. Keep warm until serving, or reheat." + "\n" +
-                "6. To assemble, pile the meat into the halved brioche buns, spoon over the BBQ sauce, top with coleslaw and pickles, and sandwich together." + "\n", "5 hours 10mins", R.drawable.pulled_pork));
+                "6. To assemble, pile the meat into the halved brioche buns, spoon over the BBQ sauce, top with coleslaw and pickles, and sandwich together." + "\n", "5 hours 10 mins", R.drawable.pulled_pork));
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
