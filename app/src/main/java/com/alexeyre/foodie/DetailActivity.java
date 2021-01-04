@@ -12,6 +12,7 @@ import android.widget.VideoView;
 
 public class DetailActivity extends AppCompatActivity {
 
+    //variables
     TextView recipeTitle, recipeIngredients, recipeMethodTitle, recipe;
     ImageView recipeImage;
     VideoView videoView;
@@ -21,10 +22,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        //variables to implement video feature
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
         Uri uri = Uri.parse(videoPath);
 
 
+        //hooks
         recipeTitle = (TextView) findViewById(R.id.title);
         recipeIngredients = (TextView) findViewById(R.id.ingredients);
         recipeMethodTitle = (TextView) findViewById(R.id.detail_method);
@@ -33,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         videoView = (VideoView) findViewById(R.id.video_view);
 
 
+        //use keys to create recipe details
         Intent intent = getIntent();
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         String Title = intent.getExtras().getString("RecipeTitle");
@@ -42,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
         int Image = intent.getExtras().getInt("Image");
         int Video = intent.getExtras().getInt("Video");
 
+        //set the following fields using the keys
         recipeTitle.setText(Title);
         recipeIngredients.setText(Ingredients);
         recipeMethodTitle.setText(MethodTitle);
@@ -49,6 +54,7 @@ public class DetailActivity extends AppCompatActivity {
         recipeImage.setImageResource(Image);
         videoView.setVideoURI(uri);
 
+        //media controller variables
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);

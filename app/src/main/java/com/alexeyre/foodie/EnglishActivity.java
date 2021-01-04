@@ -14,6 +14,7 @@ import java.util.List;
 
 public class EnglishActivity extends AppCompatActivity {
 
+    //declare variables
     Toolbar toolbar;
     RecyclerView mRecyclerView;
     List<RecipeModelClone> myRecipeList;
@@ -28,6 +29,7 @@ public class EnglishActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
 
 
+        //add a recipe to my array list
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Roast Beef", "1 tbsp black peppercorn , " +
                 "1 tbsp English mustard powder , " +
@@ -53,6 +55,7 @@ public class EnglishActivity extends AppCompatActivity {
                 "4. To test if the oil is hot enough, put a drop of batter into the pan – it should crisp and brown within 30 secs. Dip each langoustine or prawn tail into the batter, then carefully drop it into the oil. Drizzle a little extra batter over each one while they are cooking – this will give you a really crispy coating. Cook them in batches, making sure you don’t overcrowd the pan. When golden and floating to the surface, scoop out and drain well on kitchen paper. Sprinkle the scampi with salt and serve with the tartare sauce, lemon wedges and chips." + "\n", "20 mins", R.drawable.scampi, R.raw.video));
 
 
+        //get the recycler view and display array list of recipes
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));

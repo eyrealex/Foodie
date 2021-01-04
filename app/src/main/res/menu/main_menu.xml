@@ -6,26 +6,26 @@
             android:id="@+id/nav_home"
             android:background="@color/white"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="@string/home_menu" />
 
         <item
             android:id="@+id/nav_recipes"
             android:background="@color/white"
             android:icon="@drawable/ic_cookbook"
-            android:title="My Recipes" />
+            android:title="@string/recipes_menu" />
 
 
     </group>
 
 
-    <item android:title="Information ">
+    <item android:title="@string/information_menu">
 
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_about"
                     android:icon="@drawable/ic_about"
-                    android:title="About" />
+                    android:title="@string/about_menu" />
             </group>
         </menu>
 

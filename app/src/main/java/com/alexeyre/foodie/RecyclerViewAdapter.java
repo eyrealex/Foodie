@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyHolder> {
+
+    //variables
     private Context mContext;
     private List<RecipeModelClone> mCloneList;
 
@@ -23,6 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.mCloneList = mCloneList;
     }
 
+    //create a template for the recycler
     @NonNull
     @Override
     public MyHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -36,6 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull final MyHolder myHolder, final int i) {
 
+        //set the template fields using the model variables
         myHolder.mTitle.setText(mCloneList.get(i).getTitle());
         myHolder.mTime.setText(mCloneList.get(i).getTime());
         myHolder.imageView.setImageResource(mCloneList.get(i).getImage());
@@ -44,6 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, DetailActivity.class);
 
+                //get the extras from the model class and display them when the template for a recipe has been clicked
                 intent.putExtra("RecipeTitle", mCloneList.get(i).getTitle());
                 intent.putExtra("RecipeIngredients", mCloneList.get(i).getIngredients());
                 intent.putExtra("RecipeMethodTitle", mCloneList.get(i).getMethodTitle());
@@ -61,8 +66,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mCloneList.size();
     }
 
+    //class for the recipe template
     public class MyHolder extends RecyclerView.ViewHolder {
 
+        //template variables
         ImageView imageView;
         TextView mTitle, mDesc, mTime;
         CardView mCardView;
@@ -70,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyHolder(@NonNull View itemView) {
             super(itemView);
 
+            //template hooks
             imageView = itemView.findViewById(R.id.recipeIv);
             mTitle = itemView.findViewById(R.id.titleTv);
             mTime = itemView.findViewById(R.id.timeTv);

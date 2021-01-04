@@ -16,6 +16,35 @@
     <string name="recipeIngredients">Ingredients</string>
     <string name="recipeMethod">Method</string>
 
+    <string name="detail_title">Title</string>
+    <string name="detail_ingredients">Ingredients</string>
+    <string name="detail_method">Method</string>
+    <string name="detail_update">Update</string>
+    <string name="detail_delete">Delete</string>
+
+    <string name="update_title">Recipe Name</string>
+    <string name="update_ingredients">Ingredients(space ingredients)</string>
+    <string name="update_method">Steps taken(new line for each step)</string>
+    <string name="update_time">Time to Cook</string>
+    <string name="image_btn">Select Image</string>
+    <string name="update_btn">Update Recipe</string>
+
+    <string name="create_title">Recipe Name</string>
+    <string name="create_ingredients">Ingredients(space ingredients)</string>
+    <string name="create_method">Steps taken(new line for each step)</string>
+    <string name="create_time">Time to Cook</string>
+    <string name="create_image_btn">Select Image</string>
+    <string name="create_btn">Create Recipe</string>
+
+    <string name="home_menu">Home</string>
+    <string name="information_menu">Information</string>
+    <string name="recipes_menu">My Recipes</string>
+    <string name="about_menu">About</string>
+
+    <string name="about_title">Attributions</string>
+    <string name="about_icons">App Icons</string>
+    <string name="about_images">Images</string>
+
     <string name="recipeCuisinesTitle">Cuisines</string>
     <string name="recipeChineseTitle">Chinese</string>
     <string name="recipeIndianTitle">Indian</string>
@@ -24,5 +53,5 @@
     <string name="recipeMexicanTitle">Mexican</string>
     <string name="recipeEnglishTitle">English</string>
     <string name="recipeDessertTitle">Dessert</string>
-    <string name="recipeDrinkTitle">Drink</string>
+    <string name="recipeDrinkTitle">Cocktails</string>
 </resources>

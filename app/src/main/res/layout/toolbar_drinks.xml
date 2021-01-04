@@ -14,7 +14,7 @@
         android:elevation="4dp"
         android:fontFamily="@font/baloo"
         android:paddingLeft="40dp"
-        android:text="Drinks"
+        android:text="Cocktails"
         android:textColor="@color/white"
         android:textSize="40sp" />
 

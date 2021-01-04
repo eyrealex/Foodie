@@ -35,10 +35,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //french
-        setAppLocale("fr");
-
-
         //hooks
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -120,10 +116,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            moveTaskToBack(true);
+            moveTaskToBack(true); //stop the app from launching the splash every time if the app has not been fully closed
         }
     }
 
+    //method for the drawer feature
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

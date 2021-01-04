@@ -21,6 +21,7 @@ import java.util.List;
 
 public class MyRecipeActivity extends AppCompatActivity {
 
+    //variables
     List<RecipeModel> myRecipeList;
     RecipeModel mRecipeModel;
     MyAdapter myAdapter;
@@ -36,10 +37,12 @@ public class MyRecipeActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MyRecipeActivity.this, 1);
         mRecyclerView.setLayoutManager(gridLayoutManager);
 
+        //create an array list for the recipes
         myRecipeList = new ArrayList<>();
         myAdapter = new MyAdapter(MyRecipeActivity.this, myRecipeList);
         mRecyclerView.setAdapter(myAdapter);
 
+        //reference the database path for the recipes
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
 
         ValueEventListener eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
@@ -47,6 +50,7 @@ public class MyRecipeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 myRecipeList.clear();
 
+                //loop through the variables in the recipe model class and add them to the array list
                 for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()) {
                     RecipeModel recipeModel = itemSnapshot.getValue(RecipeModel.class);
                     recipeModel.setKey(itemSnapshot.getKey());
@@ -62,6 +66,7 @@ public class MyRecipeActivity extends AppCompatActivity {
         });
     }
 
+    //method to add a new recipe
     public void btnAddRecipe(View view) {
         startActivity(new Intent(MyRecipeActivity.this, CreateRecipeActivity.class));
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

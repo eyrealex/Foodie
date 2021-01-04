@@ -26,6 +26,7 @@ import com.google.firebase.storage.UploadTask;
 
 public class RecipeUpdateActivity extends AppCompatActivity {
 
+    //declare variables
     String RecipeName, RecipeIngredients, RecipeMethod, RecipeTime;
     ImageView RecipeImage;
     EditText name_text, ingredients_text, method_text, time_text;
@@ -41,15 +42,18 @@ public class RecipeUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_update);
 
+        //hooks
         RecipeImage = (ImageView) findViewById(R.id.recipeImage);
         name_text = (EditText) findViewById(R.id.recipeName);
         ingredients_text = (EditText) findViewById(R.id.recipe_ingredients);
         method_text = (EditText) findViewById(R.id.recipe_method);
         time_text = (EditText) findViewById(R.id.recipe_time);
 
+        //bundles to handle keys for updating a recipe
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
+        if (bundle != null) { //if the bundle is not empty
 
+            //load the activity with and animation, give all extras a key
             Glide.with(RecipeUpdateActivity.this)
                     .load(bundle.getString("oldimageUrl"))
                     .into(RecipeImage);
@@ -60,12 +64,14 @@ public class RecipeUpdateActivity extends AppCompatActivity {
             key = bundle.getString("key");
             oldImageUrl = bundle.getString("oldimageUrl");
         }
+        //reference the database path for updating the key
         databaseReference = FirebaseDatabase.getInstance().getReference("Recipe").child("key");
     }
 
+    //method to select an image
     public void btnSelectImage(View view) {
         Intent photoPicker = new Intent(Intent.ACTION_PICK);
-        photoPicker.setType("image/*");
+        photoPicker.setType("image/*"); //used for selecting jpegs, pngs etc
         startActivityForResult(photoPicker, 1);
     }
 
@@ -73,22 +79,26 @@ public class RecipeUpdateActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) { //if the image has successfully been selected, get the image and set it
 
             uri = data.getData();
             RecipeImage.setImageURI(uri);
 
-        } else Toast.makeText(this, "You haven't picked image", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "You haven't picked image", Toast.LENGTH_SHORT).show(); //otherwise return error message
     }
 
+    //method to update the recipe
     public void btnUpdateRecipe(View view) {
 
+        //get the user inputs to store on the database
         RecipeName = name_text.getText().toString().trim();
         RecipeIngredients = ingredients_text.getText().toString().trim();
         RecipeMethod = method_text.getText().toString();
         RecipeTime = time_text.getText().toString();
 
 
+        //reference the database, get the last path the previous image was currently in
         storageReference = FirebaseStorage.getInstance()
                 .getReference().child("RecipeImage").child(uri.getLastPathSegment());
         storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -96,10 +106,10 @@ public class RecipeUpdateActivity extends AppCompatActivity {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                 Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete()) ;
+                while (!uriTask.isComplete()) ; //if the task is successful, upload the new image
                 Uri urlImage = uriTask.getResult();
                 imageUrl = urlImage.toString();
-                uploadRecipe();
+                uploadRecipe(); //also upload the new recipe to database
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -110,7 +120,9 @@ public class RecipeUpdateActivity extends AppCompatActivity {
 
     }
 
+    //upload recipe method
     private void uploadRecipe() {
+        //get the user inputs to store on the database
         RecipeModel recipeModel = new RecipeModel(
                 RecipeName,
                 RecipeIngredients,
@@ -120,6 +132,7 @@ public class RecipeUpdateActivity extends AppCompatActivity {
         );
 
 
+        //method to delete a recipe
         databaseReference.setValue(recipeModel).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -130,6 +143,7 @@ public class RecipeUpdateActivity extends AppCompatActivity {
         });
 
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

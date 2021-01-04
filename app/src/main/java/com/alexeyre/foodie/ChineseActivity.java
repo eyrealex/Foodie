@@ -17,6 +17,7 @@ import java.util.List;
 
 public class ChineseActivity extends AppCompatActivity {
 
+    //declare variables
     Toolbar toolbar;
     RecyclerView mRecyclerView;
     List<RecipeModelClone> myRecipeList;
@@ -31,7 +32,7 @@ public class ChineseActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
 
 
-
+        //add a recipe to my array list
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Kung Pao Noodles", "12 ounces spaghetti, fettuccine, or linguine noodles, " +
                 "1/2 cup soy sauce, " +
@@ -85,6 +86,7 @@ public class ChineseActivity extends AppCompatActivity {
                 "7. Transfer chicken to pan and stir 2-3 minutes until hot throughout. Garnish with sesame seeds and sliced green onions and serve over cooked rice." + "\n", " 30 mins", R.drawable.lemon_chicken, R.raw.video));
 
 
+        //get the recycler view and display array list of recipes
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));

@@ -34,7 +34,7 @@
                 android:layout_below="@+id/recipe_image"
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
-                android:text="Title"
+                android:text="@string/detail_title"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_below="@id/name"
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
-                android:text="Ingredients"
+                android:text="@string/detail_ingredients"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                 android:layout_below="@id/ingredients"
                 android:layout_marginTop="10dp"
                 android:padding="20dp"
-                android:text="Method"
+                android:text="@string/detail_method"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                 android:layout_margin="20dp"
                 android:backgroundTint="#48E199"
                 android:onClick="btnUpdateRecipe"
-                android:text="Update"
+                android:text="@string/detail_update"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
 
@@ -115,7 +115,7 @@
                 android:layout_margin="20dp"
                 android:backgroundTint="#48E199"
                 android:onClick="btnDeleteRecipe"
-                android:text="Delete"
+                android:text="@string/detail_delete"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
         </RelativeLayout>

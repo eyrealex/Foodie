@@ -22,6 +22,7 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
+    //variables
     private Context mContext;
     private List<RecipeModel> myRecipeList;
     private int lastPosition = -1;
@@ -31,6 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         this.myRecipeList = myRecipeList;
     }
 
+    //create a template for the recycler
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View mView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_item, viewGroup, false);
@@ -41,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, int i) {
 
+        //load in the recipe template from the database with animation, using the image, title and time
         Glide.with(mContext)
                 .load(myRecipeList.get(i).getRecipeImage())
                 .into(recipeViewHolder.imageView);
@@ -50,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
 
         recipeViewHolder.mCardView.setOnClickListener(v -> {
 
+            //get the extras from the model class and display them when the template for a recipe has been clicked
             Intent intent = new Intent(mContext, RecipeDetail.class);
             intent.putExtra("Image", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeImage());
             intent.putExtra("RecipeName", myRecipeList.get(recipeViewHolder.getAdapterPosition()).getRecipeName());
@@ -63,6 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
         setAnimation(recipeViewHolder.itemView, i);
     }
 
+    //method to add animation for loading in multiple templates
     private void setAnimation(View viewToAnimate, int position) {
         if (position > lastPosition) {
 
@@ -83,8 +88,10 @@ public class MyAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     }
 }
 
+//class for the recipe template
 class RecipeViewHolder extends RecyclerView.ViewHolder {
 
+    //template variables
     ImageView imageView;
     TextView mTitle, mTime;
     CardView mCardView;
@@ -92,6 +99,7 @@ class RecipeViewHolder extends RecyclerView.ViewHolder {
     public RecipeViewHolder(@NonNull View itemView) {
         super(itemView);
 
+        //template hooks
         imageView = itemView.findViewById(R.id.recipeIv);
         mTitle = itemView.findViewById(R.id.titleTv);
         mTime = itemView.findViewById(R.id.timeTv);

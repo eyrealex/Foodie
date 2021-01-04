@@ -1,9 +1,10 @@
 package com.alexeyre.foodie;
 
 public class RecipeModel {
+    //variables
     private String recipeName, recipeIngredients, recipeMethod, recipeTime, recipeImage, key;
 
-
+    //constructor
     public RecipeModel(String recipeName, String recipeIngredients, String recipeMethod, String recipeTime, String recipeImage) {
         this.recipeName = recipeName;
         this.recipeIngredients = recipeIngredients;
@@ -12,9 +13,11 @@ public class RecipeModel {
         this.recipeImage = recipeImage;
     }
 
-    public  RecipeModel(){}
+    //empty constructor
+    public RecipeModel() {
+    }
 
-
+    //getters
     public String getRecipeName() {
         return recipeName;
     }

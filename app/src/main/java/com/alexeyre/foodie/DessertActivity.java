@@ -15,6 +15,7 @@ import java.util.List;
 
 public class DessertActivity extends AppCompatActivity {
 
+    //declare variables
     Toolbar toolbar;
     RecyclerView mRecyclerView;
     List<RecipeModelClone> myRecipeList;
@@ -29,6 +30,7 @@ public class DessertActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
 
 
+        //add a recipe to my array list
         myRecipeList = new ArrayList<>();
         myRecipeList.add(new RecipeModelClone("Brownies", "1 cup butter, melted  , " +
                 "2 cups white sugar , " +
@@ -55,6 +57,7 @@ public class DessertActivity extends AppCompatActivity {
                 "5. Spoon the mixture over the cooled and set biscuit base, then smooth the top. Return to the fridge to cool for at least 6 hrs until the topping is set. Finally, decorate with fruit." + "\n", "40 mins", R.drawable.cheesecake, R.raw.video));
 
 
+        //get the recycler view and display array list of recipes
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));

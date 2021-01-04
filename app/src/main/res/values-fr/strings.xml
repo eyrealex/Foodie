@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Foodie</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="recipeTitle">Title</string>
+    <string name="recipeIngredients">Ingredients</string>
+    <string name="recipeMethod">Method</string>
+
+    <string name="detail_title">Titre</string>
+    <string name="detail_ingredients">Ingrédients</string>
+    <string name="detail_method">Méthode</string>
+    <string name="detail_update">Mettre à jour</string>
+    <string name="detail_delete">Effacer</string>
+
+    <string name="update_title">Nom de la recette</string>
+    <string name="update_ingredients">Ingrédients (ingrédients de l\'espace)</string>
+    <string name="update_method">Mesures prises (nouvelle ligne pour chaque étape)</string>
+    <string name="update_time">Il est temps de cuisiner</string>
+    <string name="image_btn">Sélectionnez l\'image</string>
+    <string name="update_btn">Mettre à jour la recette</string>
+
+    <string name="create_title">Nom de la recette</string>
+    <string name="create_ingredients">Ingrédients (ingrédients de l\'espace)</string>
+    <string name="create_method">Mesures prises (nouvelle ligne pour chaque étape)</string>
+    <string name="create_time">Il est temps de cuisiner</string>
+    <string name="create_image_btn">Sélectionnez l\'image</string>
+    <string name="create_btn">Créer une recette</string>
+
+    <string name="home_menu">Accueil</string>
+    <string name="information_menu">Information</string>
+    <string name="recipes_menu">Mes recettes</string>
+    <string name="about_menu">À propos</string>
+
+    <string name="about_title">Atribuciones</string>
+    <string name="about_icons">Icônes d\'application</string>
+    <string name="about_images">Imagenes</string>
+
+    <string name="recipeCuisinesTitle">Cuisines</string>
+    <string name="recipeChineseTitle">Chinoise</string>
+    <string name="recipeIndianTitle">Indienne</string>
+    <string name="recipeItalianTitle">Italienne</string>
+    <string name="recipeAmericanTitle">Américaine</string>
+    <string name="recipeMexicanTitle">Mexicaine</string>
+    <string name="recipeEnglishTitle">Anglaise</string>
+    <string name="recipeDessertTitle">Dessert</string>
+    <string name="recipeDrinkTitle">Cocktails</string>
+</resources>

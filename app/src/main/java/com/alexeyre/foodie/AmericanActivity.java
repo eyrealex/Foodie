@@ -14,6 +14,7 @@ import java.util.List;
 
 public class AmericanActivity extends AppCompatActivity {
 
+    //declare variables
     Toolbar toolbar;
     RecyclerView mRecyclerView;
     List<RecipeModelClone> myRecipeList;
@@ -27,8 +28,10 @@ public class AmericanActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar = findViewById(R.id.toolbar);
 
+        //create an array list
         myRecipeList = new ArrayList<>();
 
+        //add a recipe to my array list
         myRecipeList.add(new RecipeModelClone("Sloppy Joes", "1 tbsp vegetable oil , " +
                 "2 small red peppers or yellow peppers, finely chopped , " +
                 "2 garlic cloves crushed , " +
@@ -57,6 +60,7 @@ public class AmericanActivity extends AppCompatActivity {
                 "6. To assemble, pile the meat into the halved brioche buns, spoon over the BBQ sauce, top with coleslaw and pickles, and sandwich together." + "\n", "5 hours 10 mins", R.drawable.pulled_pork, R.raw.video));
 
 
+        //get the recycler view and display array list of recipes
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerViewAdapter = new RecyclerViewAdapter(this, myRecipeList);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
